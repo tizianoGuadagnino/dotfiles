@@ -1,0 +1,93 @@
+" Neovim
+set runtimepath^=~/.vim runtimepath+=~/.vim/after
+let &packpath = &runtimepath
+let $VTE_VERSION="100"
+" Color Scheme
+set t_Co=256
+set t_ut=
+" Basic editor config
+set encoding=utf-8
+syntax on
+set number
+set relativenumber
+set path+=**
+set wildmenu
+set wildmode=longest:full,full
+set list
+set listchars=tab:▸\ ,trail:·
+let g:python_recommended_style = 0
+let g:python_highlight_all = 1
+" Indentation style
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
+set autoindent
+filetype plugin indent on
+" Forbit non-vim move
+nnoremap <Up> <NOP>
+nnoremap <Down> <NOP>
+nnoremap <Left> <NOP>
+nnoremap <Right> <NOP>
+" leader key
+let mapleader ="\<space>"
+nmap <leader>vs :source ~/.config/nvim/init.vim<cr>
+" Reselect visual selection after indenting
+vnoremap < <gv
+vnoremap > >gv
+" see https://vim.fandom.com/wiki/Moving_lines_up_or_down#:~:text=In%20normal%20mode%20or%20in,to%20move%20the%20block%20up.
+" Simple mappings to move lines up and down in normal and visual mode
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
+call plug#begin('~/.vim/plugged')
+" Color scheme
+source ~/.vim/plugin_config/dracula.vim
+"Tpope
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
+" Autopairs
+Plug 'jiangmiao/auto-pairs'
+" Airline
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+" Mundo
+Plug 'simnalamburt/vim-mundo'
+" tmux
+Plug 'christoomey/vim-tmux-navigator'
+" formatter
+Plug 'sbdchd/neoformat'
+" Syntax highlight
+Plug 'sheerun/vim-polyglot'
+" Coc and FzF
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'antoinemadec/coc-fzf'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+" Nicer omnicomplete preview
+Plug 'ncm2/float-preview.nvim'
+" Latex
+Plug 'lervag/vimtex'
+call plug#end()
+
+doautocmd User PlugLoaded
+
+source ~/.vim/plugin_config/coc.vim
+source ~/.vim/plugin_config/commentary.vim
+source ~/.vim/plugin_config/airline.vim
+source ~/.vim/plugin_config/mundo.vim
+source ~/.vim/plugin_config/neoformatter.vim
+source ~/.vim/plugin_config/fzf.vim
+source ~/.vim/plugin_config/float-preview.vim
+source ~/.vim/plugin_config/vimtex.vim
+" TODO: If more functions are added create a separate vim script for them
+function! InsertIpdbLine()
+  let trace = expand("import ipdb; ipdb.set_trace()")
+  execute "normal o".trace
+endfunction
+" nmap <leader>db <Cmd>call InsertIpdbLine()<CR>
+nmap <leader>db o#fmt: off<CR>import ipdb; ipdb.set_trace()<CR>#fmt: on<ESC>
+nmap <leader>dbb mm/ipdb<CR>k3dd'm

@@ -1,0 +1,15 @@
+alias ws='cd ~/source/bonn/adaptive_lidar_odometry/'
+alias rosws='source devel/setup.bash'
+alias dataserver_mount='sshfs tguadagnino@131.220.233.14:/export/datasets ~/dataserver'
+alias cmake_build='mkdir -p build && cd build && cmake .. && make -j4'
+alias update='sudo apt update && sudo apt dist-upgrade -y'
+alias spegni='sudo shutdown now'
+alias activate='source ~/source/bonn/adaptive_lidar_odometry/python/venv/bin/activate'
+alias ts='tmux new -s'
+alias ta='tmux attach -t'
+alias gs='git status'
+alias ga='git add --all'
+alias gc='git commit'
+alias cat='bat'
+alias ssh="kitty +kitten ssh"
+export BAT_THEME="Dracula"
