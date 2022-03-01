@@ -30,5 +30,5 @@ ln -s ${ROOT_DIR}/.zshrc .
 RUNZSH=no KEEP_ZSHRC=yes sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH/plugins/zsh-syntax-highlighting
-git clone https://github.com/dracula/zsh.git $ZSH/themes/dracula && cd $ZSH/themes/dracula && ln -s dracula.zsh-theme . && cd -
+git clone https://github.com/dracula/zsh.git $ZSH/themes/dracula && cd $ZSH/themes/ && ln -s ./dracula/dracula.zsh-theme . 
 cd ${ROOT_DIR}
