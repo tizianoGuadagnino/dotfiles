@@ -6,7 +6,16 @@
   "python.formatting.provider": "black",
   // Coc root folder
   "coc.preferences.rootPatterns": [".git", "venv"],
-
+  // C++
+  "clangd.enabled": true,
+  "clangd.compilationDatabasePath": "build/",
+  "clangd.arguments": [
+    "--background-index",
+    "--clang-tidy",
+    "--header-insertion=iwyu",
+    "--suggest-missing-includes",
+    "-j=8"
+  ],
   // coc-explorer
   "explorer.buffer.root.template": "[icon & 1] OPEN EDITORS",
   "explorer.file.root.template": "[icon & 1] PROJECT ([root])",
@@ -24,5 +33,6 @@
   "explorer.openAction.strategy": "sourceWindow",
   "explorer.keyMappings.global": {
     "<cr>": ["wait", "expandable?", "expand", "open"]
-  }
+  },
+  "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/13.0.0/clangd_13.0.0/bin/clangd"
 }

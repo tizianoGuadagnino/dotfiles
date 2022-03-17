@@ -15,13 +15,13 @@ ZSH_THEME="dracula"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting z tmux sudo history)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting z tmux sudo history copypath)
 
 source $ZSH/oh-my-zsh.sh
 # User configuration
 alias ws='cd ~/source/bonn/adaptive_lidar_odometry/'
 alias rosws='source devel/setup.bash'
-alias dataserver_mount='sshfs tguadagnino@131.220.233.14:/export/datasets ~/dataserver'
+alias dataserver_mount='sshfs -o allow_other tguadagnino@131.220.233.14:/export/datasets ~/dataserver'
 alias cmake_build='mkdir -p build && cd build && cmake .. && make -j4'
 alias update='sudo apt update && sudo apt dist-upgrade -y'
 alias spegni='sudo shutdown now'

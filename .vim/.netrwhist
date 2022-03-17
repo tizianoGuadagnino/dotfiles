@@ -1,5 +1,12 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =3
-let g:netrw_dirhist_3='/home/frevo/source/bonn/adaptive_lidar_odometry/python/adaptive_lidar_odometry_python/utils'
-let g:netrw_dirhist_2='/home/frevo/source/bonn/adaptive_lidar_odometry/python/adaptive_lidar_odometry_python'
-let g:netrw_dirhist_1='/home/frevo/source/bonn/adaptive_lidar_odometry/python/adaptive_lidar_odometry_python/odometry'
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/home/frevo/source/ct-icp/src/utils'
+let g:netrw_dirhist_5='/home/frevo/source/nicky/localizer/srrg_localizer2d/src'
+let g:netrw_dirhist_4='/home/frevo/source/nicky/localizer/srrg_localizer2d'
+let g:netrw_dirhist_3='/home/frevo/source/nicky/localizer/srrg_localizer2d/src'
+let g:netrw_dirhist_2='/home/frevo/source/nicky/localizer/srrg_localizer2d'
+let g:netrw_dirhist_1='/home/frevo/source/nicky/localizer/srrg_localizer2d/src'
+let g:netrw_dirhist_0='/home/frevo/source/nicky/localizer/srrg_localizer2d'
+let g:netrw_dirhist_9='/home/frevo/source/nicky/localizer/srrg_localizer2d/src'
+let g:netrw_dirhist_8='/home/frevo/source/nicky/localizer/srrg_localizer2d'
+let g:netrw_dirhist_7='/home/frevo/source/nicky/localizer/srrg_localizer2d/src'

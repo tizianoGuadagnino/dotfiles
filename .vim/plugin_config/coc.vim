@@ -6,6 +6,8 @@ let g:coc_global_extensions = [
     \ 'coc-sh',
     \ 'coc-pyright',
     \ 'coc-explorer',
+    \ 'coc-clangd',
+    \ 'coc-cmake',
     \ 'coc-vimtex'
 \ ]
 
@@ -27,6 +29,7 @@ endfunction
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 nmap <silent> <leader>d <Plug>(coc-diagnostic-info)
+nmap <silent> <leader>s :CocCommand clangd.switchSourceHeader<CR>
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
