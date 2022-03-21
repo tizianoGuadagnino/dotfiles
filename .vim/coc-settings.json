@@ -1,9 +1,11 @@
 {
+  "coc.preferences.formatOnType": true,
   "coc.preferences.formatOnSaveFiletypes": ["python","cpp"],
   "coc.suggest.autoTrigger": "trigger",
   // Python
   "python.linting.pylintEnabled": true,
   "python.formatting.provider": "black",
+  "python.formatting.blackPath": "black",
   // Coc root folder
   "coc.preferences.rootPatterns": [".git", "venv"],
   // C++
