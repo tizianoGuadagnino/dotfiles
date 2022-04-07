@@ -34,3 +34,4 @@ alias gc='git commit'
 alias cat='bat'
 alias ssh="kitty +kitten ssh"
 export BAT_THEME="Dracula"
+function gi() { curl -sLw n https://www.toptal.com/developers/gitignore/api/$@ ;}
