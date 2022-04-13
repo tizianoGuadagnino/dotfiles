@@ -35,6 +35,9 @@ nmap <leader>vs :source ~/.config/nvim/init.vim<cr>
 " Reselect visual selection after indenting
 vnoremap < <gv
 vnoremap > >gv
+" Copy/Paste to system clipboard
+vnoremap <leader>cy "+y 
+nmap <leader>cp "+p 
 " see https://vim.fandom.com/wiki/Moving_lines_up_or_down#:~:text=In%20normal%20mode%20or%20in,to%20move%20the%20block%20up.
 " Simple mappings to move lines up and down in normal and visual mode
 nnoremap <A-j> :m .+1<CR>==
