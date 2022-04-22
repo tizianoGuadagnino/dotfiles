@@ -44,6 +44,8 @@ nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
+nmap <leader>db iimport ipdb;ipdb.set_trace()<ESC>
+nmap <leader>dbb mm/import ipdb<CR>dd/ipdb<CR>dd'm
 call plug#begin('~/.vim/plugged')
 " Color scheme
 source ~/.vim/plugin_config/dracula.vim
@@ -86,11 +88,3 @@ source ~/.vim/plugin_config/neo-format.vim
 source ~/.vim/plugin_config/fzf.vim
 source ~/.vim/plugin_config/float-preview.vim
 source ~/.vim/plugin_config/vimtex.vim
-" TODO: If more functions are added create a separate vim script for them
-function! InsertIpdbLine()
-  let trace = expand("import ipdb; ipdb.set_trace()")
-  execute "normal o".trace
-endfunction
-" nmap <leader>db <Cmd>call InsertIpdbLine()<CR>
-nmap <leader>db o#fmt: off<CR>import ipdb; ipdb.set_trace()<CR>#fmt: on<ESC>
-nmap <leader>dbb mm/ipdb<CR>k3dd'm
