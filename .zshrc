@@ -16,7 +16,7 @@ ZSH_THEME="dracula"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting z tmux sudo history copypath)
-
+zstyle ':completion:*' menu select
 source $ZSH/oh-my-zsh.sh
 # User configuration
 alias ws='cd ~/source/bonn/adaptive_lidar_odometry/'

@@ -44,8 +44,9 @@ nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
-nmap <leader>db iimport ipdb;ipdb.set_trace()<ESC>
-nmap <leader>dbb mm/import ipdb<CR>dd/ipdb<CR>dd'm
+nmap <leader>db oimport ipdb;ipdb.set_trace()<ESC>
+nmap <leader>dbb mm/import ipdb<CR>dd/ipdb<CR>dd'm:noh<CR>
+nmap <expr> <leader>lbe "i\\begin{" . input("Name of the LaTex Environment: ") . "}]]<ESC>F\\i<CR><CR><Up><Tab>"
 call plug#begin('~/.vim/plugged')
 " Color scheme
 source ~/.vim/plugin_config/dracula.vim

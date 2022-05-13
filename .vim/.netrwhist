@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =1
+let g:netrw_dirhistcnt =2
+let g:netrw_dirhist_2='/home/frevo/source/bonn/adaptive_lidar_odometry/scripts'
 let g:netrw_dirhist_1='/home/frevo/papers/2019_paper_grisetti_solver'
 let g:netrw_dirhist_0='/home/frevo/papers'
 let g:netrw_dirhist_9='/home/frevo/papers/2020_paper_colosi_interfaces'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_6='/home/frevo/.vim'
 let g:netrw_dirhist_5='/home/frevo'
 let g:netrw_dirhist_4='/home/frevo/source'
 let g:netrw_dirhist_3='/home/frevo/source/ct-icp'
-let g:netrw_dirhist_2='/home/frevo/source/ct-icp/cpp'
