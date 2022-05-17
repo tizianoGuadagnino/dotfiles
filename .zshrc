@@ -1,9 +1,9 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-
+export EDITOR='vim'
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-
+setxkbmap -option caps:swapescape
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -36,5 +36,7 @@ alias gp='gpb && git push'
 alias get='git clone --recurse-submodules -j8'
 alias cat='bat'
 alias ssh="kitty +kitten ssh"
+alias setup_project='~/dotfiles/utils/setup_project.sh .'
+alias spr='tmuxinator start'
 export BAT_THEME="Dracula"
 function gi() { curl -sLw n https://www.toptal.com/developers/gitignore/api/$@ ;}

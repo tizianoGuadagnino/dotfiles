@@ -1,0 +1,10 @@
+# ./.tmuxinator.yml
+
+name: project
+startup_window: editor
+windows:
+  - scrivitore:
+      panes:
+        - nvim
+  - run_baby_run:
+    
