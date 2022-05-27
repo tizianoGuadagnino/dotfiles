@@ -37,6 +37,8 @@ alias get='git clone --recurse-submodules -j8'
 alias cat='bat'
 alias ssh="kitty +kitten ssh"
 alias setup_project='~/dotfiles/utils/setup_project.sh'
+alias visualize='python ~/dotfiles/utils/python_utils/visualize.py'
 alias spr='tmuxinator start'
+alias open='xdg-open'
 export BAT_THEME="Dracula"
 function gi() { curl -sLw n https://www.toptal.com/developers/gitignore/api/$@ ;}
