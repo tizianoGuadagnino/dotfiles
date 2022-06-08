@@ -21,7 +21,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 alias ws='cd ~/source/bonn/adaptive_lidar_odometry/'
 alias rosws='source devel/setup.bash'
-alias dataserver_mount='sshfs -o allow_other tguadagnino@131.220.233.14:/export/datasets ~/dataserver'
+alias dataserver_mount='sshfs -o allow_other tiziano@131.220.233.14:/export/datasets ~/dataserver'
 alias cmake_build='mkdir -p build && cd build && cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 .. && make -j$(nproc)'
 alias update='sudo apt update && sudo apt dist-upgrade -y'
 alias spegni='sudo shutdown now'
