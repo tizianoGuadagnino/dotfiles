@@ -1,7 +1,8 @@
 {
   "coc.preferences.formatOnType": true,
   "coc.preferences.formatOnSaveFiletypes": ["python","cpp"],
-  "coc.suggest.autoTrigger": "trigger",
+  "python.formatting.provider": "black",
+  "python.formatting.blackPath":"/home/frevo/.local/bin/black",
   // Python
   "python.linting.pylintEnabled": true,
   // Coc root folder

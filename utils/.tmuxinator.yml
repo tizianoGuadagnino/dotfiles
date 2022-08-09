@@ -10,4 +10,5 @@ windows:
       panes:
         - 
         - htop
+        - watch -n1 nvidia-smi
     
