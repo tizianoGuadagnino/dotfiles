@@ -15,7 +15,7 @@ ZSH_THEME="dracula"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting z tmux sudo history copypath)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting z tmux sudo history xcopy)
 zstyle ':completion:*' menu select
 source $ZSH/oh-my-zsh.sh
 # User configuration
@@ -32,9 +32,10 @@ alias gs='git status'
 alias ga='git add --all'
 alias gc='git commit'
 alias gco='git checkout'
-alias gpb='git pull --rebase'
 alias gp='git push'
-alias get='git clone --recurse-submodules -j8'
+alias gpp='git pull'
+alias gppb='gpp --rebase'
+alias ccopy='xclip -sel c'
 alias cat='bat'
 alias ssh="kitty +kitten ssh"
 alias setup_project='~/dotfiles/utils/setup_project.sh'
@@ -43,3 +44,6 @@ alias spr='tmuxinator start'
 alias open='xdg-open'
 export BAT_THEME="Dracula"
 function gi() { curl -sLw n https://www.toptal.com/developers/gitignore/api/$@ ;}
+
+autoload -Uz compinit
+fpath+=~/.zfunc

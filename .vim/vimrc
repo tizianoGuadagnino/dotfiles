@@ -29,6 +29,10 @@ nnoremap <Up> <NOP>
 nnoremap <Down> <NOP>
 nnoremap <Left> <NOP>
 nnoremap <Right> <NOP>
+" nnoremap l gl
+" nnoremap k gk
+" nnoremap j gj
+" nnoremap h gh
 " leader key
 let mapleader ="\<space>"
 nmap <leader>vs :source ~/.config/nvim/init.vim<cr>
