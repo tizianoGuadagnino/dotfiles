@@ -22,7 +22,7 @@ source $ZSH/oh-my-zsh.sh
 alias ws='cd ~/source/bonn/adaptive_lidar_odometry/'
 alias rosws='source devel/setup.bash'
 alias dataserver_mount='sshfs -o allow_other tiziano@131.220.233.14:/export/datasets ~/dataserver'
-alias cmake_build='mkdir -p build && cd build && cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 .. && make -j$(nproc) && cd ..'
+alias ckb='mkdir -p build && cd build && cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 .. && make -j$(nproc) && cd ..'
 alias update='sudo apt update && sudo apt dist-upgrade -y'
 alias spegni='sudo shutdown now'
 alias activate='source ~/source/bonn/adaptive_lidar_odometry/python/venv/bin/activate'
@@ -35,6 +35,7 @@ alias gco='git checkout'
 alias gp='git push'
 alias gpp='git pull'
 alias gppb='gpp --rebase'
+alias gca='git commit -am "small thing" && gp'
 alias ccopy='xclip -sel c'
 alias cat='bat'
 alias ssh="kitty +kitten ssh"
@@ -47,3 +48,23 @@ function gi() { curl -sLw n https://www.toptal.com/developers/gitignore/api/$@ ;
 
 autoload -Uz compinit
 fpath+=~/.zfunc
+#compdef gitlab-ci-local
+###-begin-gitlab-ci-local-completions-###
+#
+# yargs command completion script
+#
+# Installation: /usr/local/bin/gitlab-ci-local completion >> ~/.zshrc
+#    or /usr/local/bin/gitlab-ci-local completion >> ~/.zprofile on OSX.
+#
+_gitlab-ci-local_yargs_completions()
+{
+  local reply
+  local si=$IFS
+  IFS=$'
+' reply=($(COMP_CWORD="$((CURRENT-1))" COMP_LINE="$BUFFER" COMP_POINT="$CURSOR" /usr/local/bin/gitlab-ci-local --get-yargs-completions "${words[@]}"))
+  IFS=$si
+  _describe 'values' reply
+}
+compdef _gitlab-ci-local_yargs_completions gitlab-ci-local
+###-end-gitlab-ci-local-completions-###
+
