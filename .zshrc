@@ -3,26 +3,25 @@
 export EDITOR='vim'
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-setxkbmap -option caps:swapescape
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="dracula"
-
+export PATH="$HOME/.local/bin:$PATH"
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting z tmux sudo history)
+plugins=(colored-man-pages git zsh-autosuggestions zsh-syntax-highlighting z tmux sudo history)
 zstyle ':completion:*' menu select
 source $ZSH/oh-my-zsh.sh
 # User configuration
 alias ws='cd ~/source/bonn/adaptive_lidar_odometry/'
 alias rosws='source devel/setup.bash'
 alias dataserver_mount='sshfs -o allow_other tiziano@131.220.233.14:/export/datasets ~/dataserver'
-alias ckb='mkdir -p build && cd build && cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 .. && make -j$(nproc) && cd ..'
+alias ckb='cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -Bbuild && make -C build -j$(nproc)'
 alias update='sudo apt update && sudo apt dist-upgrade -y'
 alias spegni='sudo shutdown now'
 alias activate='source ~/source/bonn/adaptive_lidar_odometry/python/venv/bin/activate'
@@ -48,14 +47,6 @@ function gi() { curl -sLw n https://www.toptal.com/developers/gitignore/api/$@ ;
 
 autoload -Uz compinit
 fpath+=~/.zfunc
-#compdef gitlab-ci-local
-###-begin-gitlab-ci-local-completions-###
-#
-# yargs command completion script
-#
-# Installation: /usr/local/bin/gitlab-ci-local completion >> ~/.zshrc
-#    or /usr/local/bin/gitlab-ci-local completion >> ~/.zprofile on OSX.
-#
 _gitlab-ci-local_yargs_completions()
 {
   local reply

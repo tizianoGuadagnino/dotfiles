@@ -3,7 +3,7 @@ ROOT_DIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 sudo add-apt-repository ppa:neovim-ppa/stable
 sudo apt update
 # install necessary packages for plugins
-sudo apt install -y neovim clang-format clang-tidy clangd flake8 python3-autopep8 tmux silversearcher-ag ripgrep fonts-powerline zathura xclip
+sudo apt install -y neovim clang-format clang-tidy clangd flake8 python3-autopep8 tmux silversearcher-ag ripgrep fonts-powerline zathura xclip git build-essential
 cd ~/ && wget https://github.com/sharkdp/bat/releases/download/v0.20.0/bat_0.20.0_amd64.deb && sudo dpkg -i bat_0.20.0_amd64.deb
 pip install black
 curl -sL install-node.vercel.app/lts | sudo bash
@@ -14,9 +14,12 @@ sudo systemctl enable keyd && sudo systemctl start keyd
 sudo cp ${ROOT_DIR}/utils/default.conf /etc/keyd/default.conf
 sudo keyd reload
 # Copy tmux vim and kitti config
+cd 
 ln -s ${ROOT_DIR}/.vim .
 ln -s ${ROOT_DIR}/tmux/.tmux.conf .
 ln -s ${ROOT_DIR}/tmux/.tmux/ .
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+# Kitty config
 cd ~/.config && ln -s ${ROOT_DIR}/kitty .
 sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator `which kitty` 50
 sudo update-alternatives --config x-terminal-emulator
