@@ -30,6 +30,10 @@ nnoremap <Up> <NOP>
 nnoremap <Down> <NOP>
 nnoremap <Left> <NOP>
 nnoremap <Right> <NOP>
+nnoremap k gk
+nnoremap j gj
+nnoremap h gh
+nnoremap l gl
 " nnoremap l gl
 " nnoremap k gk
 " nnoremap j gj
