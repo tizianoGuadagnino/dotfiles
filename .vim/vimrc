@@ -32,12 +32,8 @@ nnoremap <Left> <NOP>
 nnoremap <Right> <NOP>
 nnoremap k gk
 nnoremap j gj
-nnoremap h gh
-nnoremap l gl
-" nnoremap l gl
-" nnoremap k gk
-" nnoremap j gj
-" nnoremap h gh
+noremap <expr> j v:count ? 'j' : 'gj'
+noremap <expr> k v:count ? 'k' : 'gk'
 " leader key
 let mapleader ="\<space>"
 nmap <leader>vs :source ~/.config/nvim/init.vim<cr>

@@ -9,6 +9,8 @@ windows:
       layout: main-vertical
       panes:
         - 
+  - guardatore:
+      panes:
         - htop
-        - watch -n1 nvidia-smi
+        - nvtop
     

@@ -11,3 +11,4 @@ else
 fi
 echo Setting up tmuxinator for project $project_name
 sed s/project/$project_name/g ${THIS_FOLDER}/.tmuxinator.yml > ${PROJECT_FOLDER}/.tmuxinator.yml
+echo "\n.tmuxinator.yml" >> .gitignore
