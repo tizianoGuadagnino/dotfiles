@@ -18,13 +18,11 @@ plugins=(colored-man-pages git zsh-autosuggestions zsh-syntax-highlighting z tmu
 zstyle ':completion:*' menu select
 source $ZSH/oh-my-zsh.sh
 # User configuration
-alias ws='cd ~/source/bonn/adaptive_lidar_odometry/'
 alias rosws='source devel/setup.bash'
 alias dataserver_mount='sshfs -o allow_other tiziano@131.220.233.14:/export/datasets ~/dataserver'
 alias ckb='cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -Bbuild && make -C build -j$(nproc)'
 alias update='sudo apt update && sudo apt dist-upgrade -y'
 alias spegni='sudo shutdown now'
-alias activate='source ~/source/bonn/adaptive_lidar_odometry/python/venv/bin/activate'
 alias ts='tmux new -s'
 alias ta='tmux attach -t'
 alias gs='git status'
@@ -38,9 +36,8 @@ alias gca='git commit -am "small thing" && gp'
 alias ccopy='xclip -sel c'
 alias cat='bat'
 alias ssh="kitty +kitten ssh"
-alias setup_project='~/dotfiles/utils/setup_project.sh'
 alias visualize='python ~/dotfiles/utils/python_utils/visualize.py'
-alias spr='tmuxinator start'
+alias spr='tmuxinator start -p $HOME/.tmuxinator.yml'
 alias open='xdg-open'
 export BAT_THEME="Dracula"
 function gi() { curl -sLw n https://www.toptal.com/developers/gitignore/api/$@ ;}

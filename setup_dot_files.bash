@@ -35,8 +35,9 @@ vim +PlugInstall +qall
 # ipython utils
 cd ~/.ipython/profile_default/startup && ln -s ${ROOT_DIR}/utils/python_utils/start.py .
 # oh my zsh
-sudo apt install zsh
 cd ~/
+ln -s ${ROOT_DIR}/utils/.tmuxinator.yml
+sudo apt install zsh
 ln -s ${ROOT_DIR}/.zshrc .
 RUNZSH=no KEEP_ZSHRC=yes sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH/plugins/zsh-autosuggestions

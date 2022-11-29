@@ -14,7 +14,3 @@ let g:neoformat_only_msg_on_error = 1
 let g:neoformat_try_formatprg = 1
 let g:shfmt_opt="-ci"
 let g:neoformat_run_all_formatters = 1
-augroup filetype_python
-    autocmd!
-    autocmd FileType python let b:neoformat_run_all_formatters = 1
-augroup END

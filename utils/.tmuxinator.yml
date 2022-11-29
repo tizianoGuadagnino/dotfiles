@@ -1,15 +1,15 @@
 # ./.tmuxinator.yml
 name: project
-startup_window: editor
+startup_window: scrivitore
 windows:
   - scrivitore:
       panes:
         - nvim
   - run_baby_run:
-      layout: main-vertical
       panes:
         - 
   - guardatore:
+      layout: vertical
       panes:
         - htop
         - nvtop
