@@ -3,7 +3,8 @@ ROOT_DIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 sudo add-apt-repository ppa:neovim-ppa/stable
 sudo apt update
 # install necessary packages for plugins
-sudo apt install -y neovim clang-format clang-tidy clangd flake8 python3-autopep8 tmux silversearcher-ag ripgrep fonts-powerline zathura xclip git build-essential
+sudo apt install -y neovim clang-format clang-tidy clangd flake8 python3-autopep8 tmux silversearcher-ag ripgrep fonts-powerline zathura xclip git build-essential kitty zsh python3-pip
+sudo apt remove vim
 cd ~/ && wget https://github.com/sharkdp/bat/releases/download/v0.20.0/bat_0.20.0_amd64.deb && sudo dpkg -i bat_0.20.0_amd64.deb
 pip install black
 curl -sL install-node.vercel.app/lts | sudo bash
@@ -17,7 +18,6 @@ sudo keyd reload
 cd 
 ln -s ${ROOT_DIR}/.vim .
 ln -s ${ROOT_DIR}/tmux/.tmux.conf .
-ln -s ${ROOT_DIR}/tmux/.tmux/ .
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 # Kitty config
 cd ~/.config && ln -s ${ROOT_DIR}/kitty .
@@ -37,7 +37,6 @@ cd ~/.ipython/profile_default/startup && ln -s ${ROOT_DIR}/utils/python_utils/st
 # oh my zsh
 cd ~/
 ln -s ${ROOT_DIR}/utils/.tmuxinator.yml
-sudo apt install zsh
 ln -s ${ROOT_DIR}/.zshrc .
 RUNZSH=no KEEP_ZSHRC=yes sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH/plugins/zsh-autosuggestions
