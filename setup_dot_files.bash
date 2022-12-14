@@ -3,7 +3,7 @@ ROOT_DIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 sudo add-apt-repository ppa:neovim-ppa/stable
 sudo apt update
 # install necessary packages for plugins
-sudo apt install -y neovim clang-format clang-tidy clangd flake8 python3-autopep8 tmux silversearcher-ag ripgrep fonts-powerline zathura xclip git build-essential kitty zsh python3-pip
+sudo apt install -y neovim clang-format clang-tidy clangd flake8 python3-autopep8 tmux silversearcher-ag ripgrep fonts-powerline zathura xclip git build-essential kitty zsh python3-pip tmuxinator
 sudo apt remove vim
 cd ~/ && wget https://github.com/sharkdp/bat/releases/download/v0.20.0/bat_0.20.0_amd64.deb && sudo dpkg -i bat_0.20.0_amd64.deb && rm bat_0*
 pip install black cmake
