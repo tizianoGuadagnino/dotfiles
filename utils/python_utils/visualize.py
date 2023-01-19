@@ -38,6 +38,7 @@ class RegistrationVisualizer:
         self._register_key_callbacks()
         self.init_viewpoint = True
         self.start_run = False
+        self.next_frame = False
 
     def register_key_callback(self, key, callback):
         self.vis.register_key_callback(ord(str(key)), partial(callback))
@@ -52,7 +53,6 @@ class RegistrationVisualizer:
 
     def start(self, vis):
         self.start_run = not self.start_run
-        self.next_frame = self.start_run
 
     def quit(self, vis):
         try:
@@ -65,8 +65,7 @@ class RegistrationVisualizer:
         self.update_geometries()
         self.vis.clear_geometries()
         for geometry in self.geometries:
-            self.vis.add_geometry(
-                geometry, reset_bounding_box=reset_bounding_box)
+            self.vis.add_geometry(geometry, reset_bounding_box=reset_bounding_box)
         if reset_bounding_box:
             self.vis.reset_view_point(True)
             self.init_viewpoint = False
@@ -90,16 +89,17 @@ class RegistrationVisualizer:
 
 
 @click.command()
-@click.option('-e', default='ply', help='file extension that you want to visualize')
+@click.option("-e", default="ply", help="file extension that you want to visualize")
 def main(e):
     files = [x for x in os.listdir() if e in x]
     files.sort()
     visualizer = RegistrationVisualizer()
     for x in files:
         pcd = read_point_cloud(x)
+        print(f"Visualizing {x}")
         visualizer.update_frame(pcd)
         visualizer.wait_for_user()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

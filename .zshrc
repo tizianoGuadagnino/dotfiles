@@ -39,6 +39,7 @@ alias ssh="kitty +kitten ssh"
 alias visualize='python ~/dotfiles/utils/python_utils/visualize.py'
 alias spr='tmuxinator start -p $HOME/.tmuxinator.yml'
 alias open='xdg-open'
+alias install='sudo apt install'
 export BAT_THEME="Dracula"
 function gi() { curl -sLw n https://www.toptal.com/developers/gitignore/api/$@ ;}
 
