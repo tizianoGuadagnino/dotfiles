@@ -9,12 +9,11 @@
   "coc.preferences.rootPatterns": [".git", "venv"],
   // C++
   "clangd.enabled": true,
-  "clangd.compilationDatabasePath": "build/",
+  "clangd.compilationDatabaseCandidates": ["${workspaceFolder}/build/", "${workspaceFolder}", "${workspaceFolder}/_skbuild/linux-x86_64-3.10/cmake-build"],
   "clangd.arguments": [
     "--background-index",
     "--clang-tidy",
     "--header-insertion=iwyu",
-    "--suggest-missing-includes",
     "-j=8"
   ],
   // coc-explorer
