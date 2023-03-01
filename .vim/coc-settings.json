@@ -3,6 +3,8 @@
   "coc.preferences.formatOnSaveFiletypes": ["python","cpp"],
   "python.formatting.provider": "black",
   "python.formatting.blackPath":"/home/frevo/.local/bin/black",
+  "cpp.formatting.provider": "clangformat",
+  "cpp.formatting.clangformatPath":"/usr/bin/clang-format",
   // Python
   "python.linting.pylintEnabled": true,
   // Coc root folder

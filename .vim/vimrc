@@ -64,8 +64,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'simnalamburt/vim-mundo'
 " tmux
 Plug 'christoomey/vim-tmux-navigator'
-" formatting
-Plug 'sbdchd/neoformat'
 " Syntax highlight
 Plug 'sheerun/vim-polyglot'
 " Coc and FzF
@@ -85,7 +83,6 @@ source ~/.vim/plugin_config/coc.vim
 source ~/.vim/plugin_config/commentary.vim
 source ~/.vim/plugin_config/airline.vim
 source ~/.vim/plugin_config/mundo.vim
-source ~/.vim/plugin_config/neoformatter.vim
 source ~/.vim/plugin_config/fzf.vim
 source ~/.vim/plugin_config/float-preview.vim
 source ~/.vim/plugin_config/vimtex.vim
