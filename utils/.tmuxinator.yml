@@ -1,5 +1,5 @@
 # ./.tmuxinator.yml
-name: project
+name: <%= @args[0] %>
 startup_window: scrivitore
 windows:
   - scrivitore:
