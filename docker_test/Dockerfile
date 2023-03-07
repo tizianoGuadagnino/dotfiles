@@ -9,5 +9,4 @@ RUN useradd -m -s /bin/bash -N -u 1000 me && \
 USER me
 WORKDIR /home/me
 RUN git clone https://github.com/tizianoGuadagnino/dotfiles.git /home/me/dotfiles
-# RUN sed -i 's/sudo//g' /home/me/dotfiles/setup_*
-# RUN /bin/bash /home/me/dotfiles/setup_*
+ENTRYPOINT ["/home/me/dotfiles/setup_dot_files.bash"]

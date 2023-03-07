@@ -43,5 +43,5 @@ RUNZSH=no KEEP_ZSHRC=yes sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/ma
 git clone https://github.com/zsh-users/zsh-autosuggestions.git ${OHMYZSH}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${OHMYZSH}/plugins/zsh-syntax-highlighting
 git clone https://github.com/dracula/zsh.git ${OHMYZSH}/themes/dracula && cd ${OHMYZSH}/themes/ && ln -s ./dracula/dracula.zsh-theme . 
-zsh
 cd ${ROOT_DIR}
+zsh
