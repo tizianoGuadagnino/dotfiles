@@ -38,9 +38,10 @@ cd ~/.ipython/profile_default/startup && ln -s ${ROOT_DIR}/utils/python_utils/st
 cd ~/
 ln -s ${ROOT_DIR}/utils/.tmuxinator.yml
 ln -s ${ROOT_DIR}/.zshrc .
-zsh
+OHMYZSH=$HOME/.oh-my-zsh
 RUNZSH=no KEEP_ZSHRC=yes sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
-git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH/plugins/zsh-syntax-highlighting
-git clone https://github.com/dracula/zsh.git $ZSH/themes/dracula && cd $ZSH/themes/ && ln -s ./dracula/dracula.zsh-theme . 
+git clone https://github.com/zsh-users/zsh-autosuggestions.git $${OHMYZSH}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $${OHMYZSH}/plugins/zsh-syntax-highlighting
+git clone https://github.com/dracula/zsh.git $${OHMYZSH}/themes/dracula && cd $${OHMYZSH}/themes/ && ln -s ./dracula/dracula.zsh-theme . 
+zsh
 cd ${ROOT_DIR}
