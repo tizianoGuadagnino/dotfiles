@@ -43,5 +43,5 @@ git clone https://github.com/zsh-users/zsh-autosuggestions.git ${OHMYZSH}/plugin
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${OHMYZSH}/plugins/zsh-syntax-highlighting
 git clone https://github.com/dracula/zsh.git ${OHMYZSH}/themes/dracula && cd ${OHMYZSH}/themes/ && ln -s ./dracula/dracula.zsh-theme . 
 cd ${ROOT_DIR}
-chsh -s "$(command -v zsh)" "$(whoami)"
+sudo -k chsh -s "$(command -v zsh)" "$(whoami)"
 zsh
