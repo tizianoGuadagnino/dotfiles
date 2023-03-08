@@ -18,7 +18,6 @@ cd
 ln -s ${ROOT_DIR}/.vim .
 ln -s ${ROOT_DIR}/tmux/.tmux.conf .
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-~/.tmux/plugins/tpm/scripts/install_plugins.sh
 # # Kitty config
 cd ~/.config && ln -s ${ROOT_DIR}/kitty .
 sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator `which kitty` 50
@@ -46,4 +45,6 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${OHMYZSH}/pl
 git clone https://github.com/dracula/zsh.git ${OHMYZSH}/themes/dracula && cd ${OHMYZSH}/themes/ && ln -s ./dracula/dracula.zsh-theme . 
 cd ${ROOT_DIR}
 sudo -k chsh -s "$(command -v zsh)" "$(whoami)"
+# install tmux plugins
+~/.tmux/plugins/tpm/scripts/install_plugins.sh
 zsh
