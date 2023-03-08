@@ -6,7 +6,8 @@ sudo apt update
 sudo apt install -y neovim clang-format clang-tidy clangd flake8 python3-autopep8 tmux silversearcher-ag ripgrep fonts-powerline zathura xclip bat git build-essential kitty zsh python3-pip tmuxinator
 sudo apt remove vim
 pip install black cmake
-curl -sL install-node.vercel.app/lts | sudo bash
+sudo snap install node -y
+# curl -sL install-node.vercel.app/lts | sudo bash
 # # install keyd remapping
 mkdir tools && cd tools && git clone https://github.com/rvaiya/keyd
 cd keyd && make && sudo make install 
