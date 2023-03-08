@@ -9,6 +9,3 @@ RUN useradd -m -s /bin/bash -N -u 1000 me && \
     chmod g+w /etc/passwd 
 USER me
 WORKDIR /home/me
-# ENTRYPOINT ["sh", "-c", "$(curl -fsSL https://github.com/tizianoGuadagnino/dotfiles/blob/master/install.sh)"]
-# RUN git clone https://github.com/tizianoGuadagnino/dotfiles.git /home/me/dotfiles
-# ENTRYPOINT ["/home/me/dotfiles/setup_dot_files.bash"]
