@@ -31,7 +31,7 @@ ln -s ~/.vim/coc-settings.json .
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 vim +PlugInstall +qall
-vim +CocUpdateSync +qall
+vim +qall
 # ipython utils
 cd ~/.ipython/profile_default/startup && ln -s ${ROOT_DIR}/utils/python_utils/start.py .
 # oh my zsh
