@@ -39,8 +39,8 @@ ln -s ${ROOT_DIR}/utils/.tmuxinator.yml
 ln -s ${ROOT_DIR}/.zshrc .
 OHMYZSH=$HOME/.oh-my-zsh
 RUNZSH=no KEEP_ZSHRC=yes CHSH=no sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
-git clone https://github.com/zsh-users/zsh-autosuggestions.git ${OHMYZSH}/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${OHMYZSH}/plugins/zsh-syntax-highlighting
+# git clone https://github.com/zsh-users/zsh-autosuggestions.git ${OHMYZSH}/plugins/zsh-autosuggestions
+# git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${OHMYZSH}/plugins/zsh-syntax-highlighting
 git clone https://github.com/dracula/zsh.git ${OHMYZSH}/themes/dracula && cd ${OHMYZSH}/themes/ && ln -s ./dracula/dracula.zsh-theme . 
 cd ${ROOT_DIR}
 sudo -k chsh -s "$(command -v zsh)" "$(whoami)"

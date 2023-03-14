@@ -14,13 +14,12 @@ export PATH="$HOME/.local/bin:$PATH"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(colored-man-pages git zsh-autosuggestions zsh-syntax-highlighting z tmux sudo history)
+plugins=(colored-man-pages git zsh-autosuggestions zsh-syntax-highlighting z tmux sudo history copybuffer copydir)
 zstyle ':completion:*' menu select
 source $ZSH/oh-my-zsh.sh
 # User configuration
-alias rosws='source devel/setup.bash'
 alias dataserver='ssh -t tiziano@dataserver "cd /export/datasets; exec bash"'
-alias ckb='cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -Bbuild && make -C build -j$(nproc)'
+alias ckb='cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -Bbuild && cmake --build build -j$(nproc)'
 alias update='sudo apt update && sudo apt dist-upgrade -y'
 alias spegni='sudo shutdown now'
 alias ts='tmux new -s'
@@ -41,7 +40,7 @@ alias spr=' tmuxinator start -p $HOME/.tmuxinator.yml $(basename $(pwd))'
 alias open='xdg-open'
 alias install='sudo apt install'
 export BAT_THEME="Dracula"
-function gi() { curl -sLw n https://www.toptal.com/developers/gitignore/api/$@ ;}
+function gitignore() { curl -sLw n https://www.toptal.com/developers/gitignore/api/$@ ;}
 
 autoload -Uz compinit
 fpath+=~/.zfunc
@@ -56,4 +55,3 @@ _gitlab-ci-local_yargs_completions()
 }
 compdef _gitlab-ci-local_yargs_completions gitlab-ci-local
 ###-end-gitlab-ci-local-completions-###
-
