@@ -42,6 +42,7 @@ alias install='sudo apt install'
 export BAT_THEME="Dracula"
 function gitignore() { curl -sLw n https://www.toptal.com/developers/gitignore/api/$@ ;}
 function copydir() {realpath "$1" | tr -d "\n" | ccopy}
+function dclone() {rsync -azrvu tiziano@dataserver:"$1" .}
 
 autoload -Uz compinit
 fpath+=~/.zfunc
