@@ -14,7 +14,7 @@ export PATH="$HOME/.local/bin:$PATH"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(colored-man-pages git zsh-autosuggestions zsh-syntax-highlighting z tmux sudo history copybuffer)
+plugins=(colored-man-pages git zsh-autosuggestions zsh-syntax-highlighting z tmux sudo history copybuffer copypath)
 zstyle ':completion:*' menu select
 source $ZSH/oh-my-zsh.sh
 # User configuration
@@ -41,7 +41,6 @@ alias open='xdg-open'
 alias install='sudo apt install'
 export BAT_THEME="Dracula"
 function gitignore() { curl -sLw n https://www.toptal.com/developers/gitignore/api/$@ ;}
-function copydir() {realpath "$1" | tr -d "\n" | ccopy}
 function dclone() {rsync -azrvu tiziano@dataserver:"$1" .}
 
 autoload -Uz compinit
