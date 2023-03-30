@@ -41,7 +41,7 @@ alias open='xdg-open'
 alias install='sudo apt install'
 export BAT_THEME="Dracula"
 function gitignore() { curl -sLw n https://www.toptal.com/developers/gitignore/api/$@ ;}
-function dclone() {rsync -azrvu tiziano@dataserver:"$1" .}
+function dclone() {rsync -azrvu --progress tiziano@dataserver:"$1" .}
 
 autoload -Uz compinit
 fpath+=~/.zfunc
