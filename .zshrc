@@ -17,42 +17,9 @@ export PATH="$HOME/.local/bin:$PATH"
 plugins=(colored-man-pages git zsh-autosuggestions zsh-syntax-highlighting z tmux sudo history copybuffer copypath)
 zstyle ':completion:*' menu select
 source $ZSH/oh-my-zsh.sh
-# User configuration
-alias dataserver='ssh -t tiziano@dataserver "cd /export/datasets; exec bash"'
-alias ckb='cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -Bbuild && cmake --build build -j$(nproc)'
-alias update='sudo apt update && sudo apt dist-upgrade -y'
-alias spegni='sudo shutdown now'
-alias ts='tmux new -s'
-alias ta='tmux attach -t'
-alias gs='git status'
-alias ga='git add --all'
-alias gc='git commit'
-alias gco='git checkout'
-alias gp='git push'
-alias gpp='git pull'
-alias gppb='gpp --rebase'
-alias gca='git commit -am "small thing" && gp'
-alias ccopy='xclip -sel c'
-alias cat='batcat'
-alias ssh="kitty +kitten ssh"
-alias visualize='python ~/dotfiles/utils/python_utils/visualize.py'
-alias spr=' tmuxinator start -p $HOME/.tmuxinator.yml $(basename $(pwd))'
-alias open='xdg-open'
-alias install='sudo apt install'
-export BAT_THEME="Dracula"
-function gitignore() { curl -sLw n https://www.toptal.com/developers/gitignore/api/$@ ;}
-function dclone() {rsync -azrvuh --progress tiziano@dataserver:"$1" .}
+source $HOME/.utils.zsh
+source $HOME/.aliases.zsh
 
+export BAT_THEME="Dracula"
 autoload -Uz compinit
 fpath+=~/.zfunc
-_gitlab-ci-local_yargs_completions()
-{
-  local reply
-  local si=$IFS
-  IFS=$'
-' reply=($(COMP_CWORD="$((CURRENT-1))" COMP_LINE="$BUFFER" COMP_POINT="$CURSOR" /usr/local/bin/gitlab-ci-local --get-yargs-completions "${words[@]}"))
-  IFS=$si
-  _describe 'values' reply
-}
-compdef _gitlab-ci-local_yargs_completions gitlab-ci-local
-###-end-gitlab-ci-local-completions-###
