@@ -36,7 +36,7 @@ cd ~/.ipython/profile_default/startup && ln -s ${ROOT_DIR}/utils/python_utils/st
 # oh my zsh
 cd ~/
 ln -s ${ROOT_DIR}/utils/.tmuxinator.yml
-ln -s ${ROOT_DIR}/.zshrc .
+ln -s ${ROOT_DIR}/.zshrc* .
 ln -s ${ROOT_DIR}/.*.zsh .
 OHMYZSH=$HOME/.oh-my-zsh
 RUNZSH=no KEEP_ZSHRC=yes CHSH=no sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
