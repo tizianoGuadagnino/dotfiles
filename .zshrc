@@ -13,6 +13,7 @@ zstyle ':completion:*' menu select
 source $ZSH/oh-my-zsh.sh
 source $HOME/.utils.zsh
 source $HOME/.aliases.zsh
+source $HOME/.zshrc_local
 
 autoload -Uz compinit
 fpath+=~/.zfunc
