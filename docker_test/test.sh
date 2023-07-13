@@ -1,5 +1,5 @@
 #!/bin/bash
-if [ $(git diff | wc -l) -gt 0]; then
+if [ $(git diff | wc -l) -gt 0 ]; then
     echo "You forgot to push...test it is useless... bye bye"
     exit 666
 fi
