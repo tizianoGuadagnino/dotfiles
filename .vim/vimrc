@@ -86,4 +86,3 @@ source ~/.vim/plugin_config/mundo.vim
 source ~/.vim/plugin_config/fzf.vim
 source ~/.vim/plugin_config/float-preview.vim
 source ~/.vim/plugin_config/vimtex.vim
-source ~/.vim/plugin_config/lexima.vim
