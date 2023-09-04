@@ -10,6 +10,7 @@
   // Coc root folder
   "coc.preferences.rootPatterns": [".git", "venv"],
   // C++
+  "clangd.path": "/usr/bin/clangd",
   "clangd.enabled": true,
   "clangd.compilationDatabaseCandidates": ["${workspaceFolder}/build/", 
                                            "${workspaceFolder}",
@@ -38,6 +39,5 @@
   "explorer.openAction.strategy": "sourceWindow",
   "explorer.keyMappings.global": {
     "<cr>": ["wait", "expandable?", "expand", "open"]
-  },
-  "clangd.path": "/usr/bin/clangd"
+  }
 }
