@@ -67,19 +67,17 @@ Plug 'christoomey/vim-tmux-navigator'
 " Syntax highlight
 Plug 'sheerun/vim-polyglot'
 " Coc and FzF
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'antoinemadec/coc-fzf'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 " Nicer omnicomplete preview
 Plug 'ncm2/float-preview.nvim'
 " Latex
 Plug 'lervag/vimtex'
+Plug 'neovim/nvim-lspconfig'
 call plug#end()
 
 doautocmd User PlugLoaded
 
-source ~/.vim/plugin_config/coc.vim
 source ~/.vim/plugin_config/commentary.vim
 source ~/.vim/plugin_config/airline.vim
 source ~/.vim/plugin_config/mundo.vim

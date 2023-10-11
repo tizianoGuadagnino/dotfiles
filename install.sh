@@ -1,6 +1,6 @@
 #!/bin/bash
 ROOT_DIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
-sudo add-apt-repository ppa:neovim-ppa/stable -y
+sudo add-apt-repository ppa:neovim-ppa/unstable -y
 sudo apt update
 # install necessary packages for plugins
 sudo apt install -y neovim clang-format clang-tidy clangd flake8 python3-autopep8 tmux silversearcher-ag ripgrep fonts-powerline zathura xclip bat git build-essential kitty zsh python3-pip tmuxinator
