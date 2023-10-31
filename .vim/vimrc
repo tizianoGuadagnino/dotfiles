@@ -72,8 +72,6 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 " Nicer omnicomplete preview
 Plug 'ncm2/float-preview.nvim'
-" Latex
-Plug 'lervag/vimtex'
 call plug#end()
 
 doautocmd User PlugLoaded
