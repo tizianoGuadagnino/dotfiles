@@ -54,8 +54,6 @@ source ~/.vim/plugin_config/dracula.vim
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
-" Autopair
-Plug 'cohama/lexima.vim'
 " Airline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -70,6 +68,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'antoinemadec/coc-fzf'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'lervag/vimtex'
 " Nicer omnicomplete preview
 Plug 'ncm2/float-preview.nvim'
 call plug#end()

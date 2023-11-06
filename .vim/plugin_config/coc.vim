@@ -2,6 +2,7 @@ let g:coc_global_extensions = [
     \ 'coc-diagnostic',
     \ 'coc-git',
     \ 'coc-json',
+    \ 'coc-pairs',
     \ 'coc-sh',
     \ 'coc-pyright',
     \ 'coc-explorer',
