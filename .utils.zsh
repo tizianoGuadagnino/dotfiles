@@ -8,3 +8,4 @@ function gitignore() {
 function dclone() {rsync -azrvuh --progress tiziano@dataserver:"$1" .}
 function clines() {cat $1 | wc -l}
 function cfiles() {ls | wc -l}
+function gdd() {git branch -D $1 && git push -u --delete origin $1}
