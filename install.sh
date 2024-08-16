@@ -1,12 +1,13 @@
 #!/bin/bash
 ROOT_DIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
-sudo add-apt-repository ppa:neovim-ppa/stable -y
+sudo add-apt-repository ppa:neovim-ppa/unstable -y
 sudo apt update
 # install necessary packages for plugins
-sudo apt install -y neovim clang-format clang-tidy clangd flake8 python3-autopep8 tmux silversearcher-ag ripgrep fonts-powerline zathura xclip bat git build-essential kitty zsh python3-pip tmuxinator
+sudo apt install -y neovim clang-format clang-tidy clangd flake8 python3-autopep8 tmux silversearcher-ag \
+    ripgrep fonts-powerline zathura xclip bat git build-essential kitty zsh python3-pip tmuxinator fzf
 sudo apt remove vim
 pip install black cmake
-curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - && sudo apt-get install -y nodejs
+curl -fsSL https://deb.nodesource.com/setup_22.x -o nodesource_setup.sh | sudo -E bash - && sudo apt-get install -y nodejs
 # # install keyd remapping
 mkdir tools && cd tools && git clone https://github.com/rvaiya/keyd
 cd keyd && make && sudo make install 

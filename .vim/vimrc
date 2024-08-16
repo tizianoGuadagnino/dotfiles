@@ -63,11 +63,11 @@ Plug 'simnalamburt/vim-mundo'
 Plug 'christoomey/vim-tmux-navigator'
 " Syntax highlight
 Plug 'sheerun/vim-polyglot'
-" Coc and FzF
+" Fzf
+Plug 'ibhagwan/fzf-lua', {'branch': 'main'}
+" Coc 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'antoinemadec/coc-fzf'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
 Plug 'lervag/vimtex'
 " Nicer omnicomplete preview
 Plug 'ncm2/float-preview.nvim'
