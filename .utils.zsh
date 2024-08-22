@@ -18,3 +18,13 @@ function rbuild() {
     echo "rbuild | Re-source ROS2 workspace"
   fi
 }
+
+function rclean() {
+  cd $COLCON_PREFIX_PATH/..
+  if [[ $? -eq 0 ]]; then
+    rm -r build install log && cd -
+  else
+    export COLCON_PREFIX_PATH=""
+    echo "rclean | Re-source ROS2 workspace"
+  fi
+}

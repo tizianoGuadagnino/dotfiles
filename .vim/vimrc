@@ -69,6 +69,7 @@ Plug 'ibhagwan/fzf-lua', {'branch': 'main'}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'antoinemadec/coc-fzf'
 Plug 'lervag/vimtex'
+Plug 'nvim-tree/nvim-web-devicons'
 " Nicer omnicomplete preview
 Plug 'ncm2/float-preview.nvim'
 call plug#end()
