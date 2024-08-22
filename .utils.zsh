@@ -9,8 +9,26 @@ function dclone() {rsync -azrvuh --progress tiziano@dataserver:"$1" .}
 function clines() {cat $1 | wc -l}
 function cfiles() {ls | wc -l}
 function gdd() {git branch -D $1 && git push -u --delete origin $1}
+
+function roscd() {
+  export PREFIX_LENGHT=$(echo $COLCON_PREFIX_PATH | wc -m)
+  if [[ $PREFIX_LENGHT -eq 1 ]]; then
+    echo "\nroscd | COLCON_PREFIX_PATH is not set, source workspace\n\n"
+    return
+  fi
+  export WORKSPACE=$(dirname $COLCON_PREFIX_PATH) 
+  cd $WORKSPACE
+}
+
 function rbuild() {
-  cd $COLCON_PREFIX_PATH/..
+  export PREFIX_LENGHT=$(echo $COLCON_PREFIX_PATH | wc -m)
+  if [[ $PREFIX_LENGHT -eq 1 ]]; then
+    colcon build --symlink-install --event-handlers console_direct+
+    echo "\nrbuild | I built the current folder but no workspace was sourced\n\n"
+    return
+  fi
+  export WORKSPACE=$(dirname $COLCON_PREFIX_PATH) 
+  cd $WORKSPACE
   if [[ $? -eq 0 ]]; then
     colcon build --symlink-install --event-handlers console_direct+ && cd -
   else
@@ -20,7 +38,13 @@ function rbuild() {
 }
 
 function rclean() {
-  cd $COLCON_PREFIX_PATH/..
+  export PREFIX_LENGHT=$(echo $COLCON_PREFIX_PATH | wc -m)
+  if [[ $PREFIX_LENGHT -eq 1 ]]; then
+    echo "\nrclean | no workspace sourced\n\n"
+    return
+  fi
+  export WORKSPACE=$(dirname $COLCON_PREFIX_PATH) 
+  cd $WORKSPACE
   if [[ $? -eq 0 ]]; then
     rm -r build install log && cd -
   else
