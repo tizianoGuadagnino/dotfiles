@@ -6,7 +6,7 @@ ZSH_THEME="dracula"
 export BAT_THEME="Dracula"
 export PATH="$HOME/.local/bin:$PATH"
 
-plugins=(colored-man-pages git zsh-autosuggestions zsh-syntax-highlighting z tmux sudo history copybuffer copypath cp)
+plugins=(colored-man-pages git zsh-autosuggestions zsh-syntax-highlighting z tmux sudo history copybuffer copypath cp rsync)
 zstyle ':completion:*' menu select
 source $ZSH/oh-my-zsh.sh
 source $HOME/.utils.zsh
