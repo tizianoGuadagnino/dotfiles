@@ -2,7 +2,7 @@
 ROOT_DIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 # install necessary packages for plugins
 sudo apt install -y clang-format clang-tidy clangd flake8 python3-autopep8 tmux silversearcher-ag \
-    ripgrep fonts-powerline zathura xclip bat git build-essential kitty zsh python3-pip tmuxinator fzf
+    ripgrep fonts-powerline zathura xclip bat git build-essential kitty zsh python3-pip tmuxinator fzf libfuse-dev
 pip install black cmake
 cd && cd .local/bin/ && curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage && chmod u+x nvim.appimage && mv nvim.appimage vim && ln -s vim /usr/bin/vim &&
 curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - && sudo apt-get install -y nodejs
