@@ -20,6 +20,14 @@ function roscd() {
   cd $WORKSPACE
 }
 
+function set_bag(){
+  export ROSBAG=$1
+}
+
+function rplay(){
+ ros2 bag play --clock 1000 -p $ROSBAG
+}
+
 function rbuild() {
   export PREFIX_LENGHT=$(echo $COLCON_PREFIX_PATH | wc -m)
   if [[ $PREFIX_LENGHT -eq 1 ]]; then
