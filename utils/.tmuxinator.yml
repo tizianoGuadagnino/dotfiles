@@ -4,7 +4,7 @@ startup_window: scrivitore
 windows:
   - scrivitore:
       panes:
-        - nvim
+        - vim
   - run_baby_run:
       panes:
         - 
