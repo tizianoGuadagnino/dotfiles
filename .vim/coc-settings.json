@@ -8,7 +8,7 @@
   // Python
   "python.linting.pylintEnabled": true,
   // Coc root folder
-  "coc.preferences.rootPatterns": [".git", "venv"],
+  "workspace.rootPatterns": ["build", ".git", "venv"],
   // C++
   "clangd.path": "/usr/bin/clangd",
   "clangd.enabled": true,

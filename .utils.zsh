@@ -31,14 +31,14 @@ function rplay(){
 function rbuild() {
   export PREFIX_LENGHT=$(echo $COLCON_PREFIX_PATH | wc -m)
   if [[ $PREFIX_LENGHT -eq 1 ]]; then
-    colcon build --symlink-install --event-handlers console_direct+
+    colcon build --symlink-install --event-handlers console_direct+ --mixin compile-commands
     echo "\nrbuild | I built the current folder but no workspace was sourced\n\n"
     return
   fi
   export WORKSPACE=$(dirname $COLCON_PREFIX_PATH) 
   cd $WORKSPACE
   if [[ $? -eq 0 ]]; then
-    colcon build --symlink-install --event-handlers console_direct+ && cd -
+    colcon build --symlink-install --event-handlers console_direct+ --mixin compile-commands && cd -
   else
     export COLCON_PREFIX_PATH=""
     echo "rbuild | Re-source ROS2 workspace"
