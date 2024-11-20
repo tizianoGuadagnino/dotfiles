@@ -46,7 +46,7 @@ function rbuild() {
 }
 
 function lidar_topics(){
-  mcap info $ROSBAG | grep -e PointCloud2 -e LaserScan | awk 'BEGIN {
+  mcap info $1 | grep -e PointCloud2 -e LaserScan | awk 'BEGIN {
       # Define color codes
       header_color = "\033[1;33m";
       reset_color = "\033[1;37m";
