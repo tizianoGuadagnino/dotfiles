@@ -45,6 +45,29 @@ function rbuild() {
   fi
 }
 
+function lidar_topics(){
+  mcap info $ROSBAG | grep -e PointCloud2 -e LaserScan | awk 'BEGIN {
+      # Define color codes
+      header_color = "\033[1;33m";
+      reset_color = "\033[1;37m";
+  }
+  NF >= 4 {
+      if (length($2) > max2) { max2 = length($2); col2[NR] = $2 }
+      if (length($8) > max8) { max8 = length($8); col8[NR] = $8 }
+      col2[NR] = $2;
+      col8[NR] = $8;
+  }
+  END {
+      # Print colored headers
+      printf "%s%-*s       %-*s%s\n", header_color, max2, "Topic", max8, "Type", reset_color;
+      printf "%-*s       %-*s\n", max2, "--------", max8, "--------";
+      
+      for (i = 1; i <= NR; i++) {
+          printf "%-*s       %-*s\n", max2, col2[i], max8, col8[i];
+      }
+  }'
+}
+
 function rclean() {
   export PREFIX_LENGHT=$(echo $COLCON_PREFIX_PATH | wc -m)
   if [[ $PREFIX_LENGHT -eq 1 ]]; then
